@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/images/styles.css">
+    <title>Update</title>
+</head>
+<body>
+    <nav id="navbar">
+        <ul >
+            <li ><a class="item" href="/"> Home </a></li>
+            <li >                
+                <div class="dropdown">
+                <a class="item" href="/services"> Services</a>
+                <div class="dropdown-content">
+                    <a href="/services/oil_change"> Oil Change Booking </a>
+                    <a href="/services/tire_change">Tire Change Booking </a>
+                    <a href="/services/safety_inspection"> Safety INspection  Book </a>
+                    <a href="/parts"> Parts </a>
+                </div>
+            </div></li>
+            <li class="dropdown">
+                <a class="item" href="/rental">Rent a Car</a>
+                <div class="dropdown-content">
+                  <a href="/rental/diesel"> diesel </a>
+                  <a href="/rental/petrol"> petrol </a>
+                  <a href="/rental/electric"> electric </a>
+                  <a href="/rental/hybrid"> hybrid </a>
+                  <a href="/rental/sedan"> Sedan </a>
+                  <a href="/rental/mid_suv"> Mid Size Suv </a>
+                  <a href="/rental/compact_suv"> Compact Suv </a>
+                  <a href="/rental/coupe"> Coupe </a>
+                  <a href="/rental/station_wagon"> Station Wagon </a>
+                  <a href="/rental/hatchback"> Hatchback </a>
+                  <a href="/rental/AWD"> AWD (All-Wheel Drive) </a>
+                  <a href="/rental/FWD"> FWD (Front-Wheel Drive) </a>
+                  <a href="/rental/4x4"> 4x4 </a>
+                  <a href="/rental/RWD"> RWD (Rear-Wheel Drive) </a>
+            <li class="dropdown">
+                <a class="item" href="/inventory">Inventory</a>
+                <div class="dropdown-content">
+                  <a href="/inventory/pre_owned"> pre_owned </a>
+                  <a href="/inventory/diesel"> diesel </a>
+                  <a href="/inventory/petrol"> petrol </a>
+                  <a href="/inventory/electric"> electric </a>
+                  <a href="/inventory/hybrid"> hybrid </a>
+                  <a href="/inventory/sedan"> Sedan </a>
+                  <a href="/inventory/mid_suv"> Mid Size Suv </a>
+                  <a href="/inventory/compact_suv"> Compact Suv </a>
+                  <a href="/inventory/coupe"> Coupe </a>
+                  <a href="/inventory/station_wagon"> Station Wagon </a>
+                  <a href="/inventory/hatchback"> Hatchback </a>
+                  <a href="/inventory/AWD"> AWD (All-Wheel Drive) </a>
+                  <a href="/inventory/FWD"> FWD (Front-Wheel Drive) </a>
+                  <a href="/inventory/4x4"> 4x4 </a>
+                  <a href="/inventory/RWD"> RWD (Rear-Wheel Drive) </a>
+                  
+                  
+            <li><form id="form1" action="/search" method="POST">
+                <input type="text" name="search" required> 
+                <button  type="submit"> search </button>
+            </form></li>
+            
+            
+               
+        </ul> 
+    </nav>
+    
+   <div id="update">
+<form id="update-form" action="/update/<%= datas._id %>" method="post" enctype="multipart/form-data" class="update-form">
+    <label class="form-label">Car Name:</label>
+    <input type="text" name="car_name" value="<%= datas.car_name %>" required class="form-input">
+    <br>
+    <label class="form-label">Company:</label>
+    <input type="text" name="company" value="<%= datas.company %>" required class="form-input">
+    <br> 
+    <label class="form-label">Car Year:</label>
+    <input type="number" name="car_year" value="<%= datas.car_year %>" required class="form-input">
+    <br> 
+    <label class="form-label">Model:</label>
+    <input type="text" name="model" value="<%= datas.model %>" required class="form-input">
+    <br>
+    <label class="form-label">Color:</label>
+    <input type="text" name="colour" value="<%= datas.colour %>" required class="form-input">
+    <br>
+    <label class="form-label">Vin Number:</label>
+    <input type="number" name="vin_no" value="<%= datas.vin_no %>" required class="form-input">
+    <br>
+    <label class="form-label">Car Price:</label>
+    <input type="number" name="car_price" value="<%= datas.car_price %>" required class="form-input">
+    <br> 
+    <label class="form-label">Engine:</label>
+    <input type="text" name="engine" value="<%= datas.engine %>" required class="form-input">
+    <br> 
+    <label class="form-label">Type:</label>
+    <input type="text" name="type" value="<%= datas.type %>" required class="form-input">
+    <br>
+    <label class="form-label">Pre Owned:</label>
+    <input type="text" name="pre_owned" placeholder="Type yes or no" class="form-input">
+    <br>
+    <label class="form-label">Fuel Type:</label>
+    <input type="text" name="fuel_type" value="<%= datas.fuel_type %>" required class="form-input">
+    <br>
+    <label class="form-label">Additional Comments:</label>
+    <input type="text" name="extra" value="<%= datas.extra %>" required class="form-input">
+    <br>
+    <label class="form-label">Choose a file:</label>
+    <input type="file" name="file" required class="form-input">
+    <br>
+
+    <label class="form-label"> Financing </label>
+    <select name="financing" class="form-select">
+        <option value="yes"> yes </option>
+        <option value="no"> No</option>
+    </select>
+    <button type="submit" class="form-button">Upload Data</button>
+</form>
+</div>
+<footer> 
+    <div class="column">
+    <h2> <a href="/services" > Services </a> </h2>
+    <ul>
+        <li><a href="/services/oil_change"> Book Oil Change</a></li>
+        <li><a href="/services/tire_change"> Book Tire Change</a></li>
+        <li><a href="/services/safety_inspection"> Book Safety Inspection</a></li>
+        </ul>
+        </div>
+        <div class="column">
+        <h2> <a href="/support" > Support </a></h2>
+       <ul>
+            <li><a href="/support"> Call us </li>
+            <li><a href="/support"> Walk in </li>
+           <li><a href="/support"> View Map </li>
+        </ul>
+        </div>
+            <div class="column">
+        <h2> <a href="/inventory" > View cars </a></h2>
+       <ul>
+            <li><a href="/rental"> Rent a car </li>
+            <li><a href="/inventory">New Arrivals </li>
+           <li><a href="/inventory"> lastest discount </li>
+        </ul>
+        </div>
+        <div class="column">
+            <h2> <a href="/parts" > Parts </a></h2>
+           <ul>
+                <li><a href="/parts"> Tools </li>
+                <li><a href="/parts">Maintainnence guide </li>
+               <li><a href="/parts"> Check your car</li>
+            </ul>
+            </div>
+       
+</footer>
+</body>
+</html>

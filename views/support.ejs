@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/images/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar">
+        <ul >
+            <li ><a class="item" href="/"> Home </a></li>
+            <li >                
+                <div class="dropdown">
+                <a class="item" href="/services"> Services</a>
+                <div class="dropdown-content">
+                    <a href="/services/oil_change"> Oil Change Booking </a>
+                    <a href="/services/tire_change">Tire Change Booking </a>
+                    <a href="/services/safety_inspection"> Safety INspection  Book </a>
+                    <a href="/parts"> Parts </a>
+                </div>
+            </div></li>
+            <li class="dropdown">
+                <a class="item" href="/rental">Rent a Car</a>
+                <div class="dropdown-content">
+                  <a href="/rental/diesel"> diesel </a>
+                  <a href="/rental/petrol"> petrol </a>
+                  <a href="/rental/electric"> electric </a>
+                  <a href="/rental/hybrid"> hybrid </a>
+                  <a href="/rental/sedan"> Sedan </a>
+                  <a href="/rental/mid_suv"> Mid Size Suv </a>
+                  <a href="/rental/compact_suv"> Compact Suv </a>
+                  <a href="/rental/coupe"> Coupe </a>
+                  <a href="/rental/station_wagon"> Station Wagon </a>
+                  <a href="/rental/hatchback"> Hatchback </a>
+                  <a href="/rental/AWD"> AWD (All-Wheel Drive) </a>
+                  <a href="/rental/FWD"> FWD (Front-Wheel Drive) </a>
+                  <a href="/rental/4x4"> 4x4 </a>
+                  <a href="/rental/RWD"> RWD (Rear-Wheel Drive) </a>
+            <li class="dropdown">
+                <a class="item" href="/inventory">Inventory</a>
+                <div class="dropdown-content">
+                  <a href="/inventory/pre_owned"> pre_owned </a>
+                  <a href="/inventory/diesel"> diesel </a>
+                  <a href="/inventory/petrol"> petrol </a>
+                  <a href="/inventory/electric"> electric </a>
+                  <a href="/inventory/hybrid"> hybrid </a>
+                  <a href="/inventory/sedan"> Sedan </a>
+                  <a href="/inventory/mid_suv"> Mid Size Suv </a>
+                  <a href="/inventory/compact_suv"> Compact Suv </a>
+                  <a href="/inventory/coupe"> Coupe </a>
+                  <a href="/inventory/station_wagon"> Station Wagon </a>
+                  <a href="/inventory/hatchback"> Hatchback </a>
+                  <a href="/inventory/AWD"> AWD (All-Wheel Drive) </a>
+                  <a href="/inventory/FWD"> FWD (Front-Wheel Drive) </a>
+                  <a href="/inventory/4x4"> 4x4 </a>
+                  <a href="/inventory/RWD"> RWD (Rear-Wheel Drive) </a>
+                  
+                  
+            <li><form id="form1" action="/search" method="POST">
+                <input type="text" name="search" required> 
+                <button  type="submit"> search </button>
+            </form></li>
+            <%  if (logged_in) { %>
+                <div class="dropdown">
+                    <a class="item" href="/your_profile">Your Profile</a>
+                    <div class="dropdown-content">
+                        <a href="/your_profile"> <%= logged_in %> <a>
+                    </div>
+                </div>
+
+            <% if(role == "admin"){  %>
+                <div class="dropdown">
+                    <a class="item" href="#">Admin Login</a>
+                    <div class="dropdown-content">
+                        <a href="/add">Add Inventory</a>
+                        <a href="/rental_add">Add Rental </a>
+                        <a href="/profile"> All User Profile</a>
+                    </div>
+                </div>
+            <% } %>
+               
+                <% }else { %>
+                    <p class="sign"> <a href="/login"> login</a></p>
+                    <p class="sign"> <a href="/signup"> sign up </a></p>
+                    <% } %>
+           
+        
+            <%  if (logged_in) { %>
+                <p class="sign" > <a href="/logout"> logout </a></p>
+                <% } %>
+               
+        </ul> 
+    </nav>
+    <div id="support"></div>
+    <div class="container3">
+        <h2 id="h2">Connect with Us</h2>
+        <div class="contact-links">
+            <a  href="tel:0987645678">Call Us</a>
+            <a href="mailto:project@gh">Email Us</a>
+            
+        </div>
+        
+    </div>
+    <footer> 
+        <div class="column">
+        <h2> <a href="/services" > Services </a> </h2>
+        <ul>
+            <li><a href="/services/oil_change"> Book Oil Change</a></li>
+            <li><a href="/services/tire_change"> Book Tire Change</a></li>
+            <li><a href="/services/safety_inspection"> Book Safety Inspection</a></li>
+            </ul>
+            </div>
+            <div class="column">
+            <h2> <a href="/support" > Support </a></h2>
+           <ul>
+                <li><a href="/support"> Call us </li>
+                <li><a href="/support"> Walk in </li>
+               <li><a href="/support"> View Map </li>
+            </ul>
+            </div>
+                <div class="column">
+            <h2> <a href="/inventory" > View cars </a></h2>
+           <ul>
+                <li><a href="/rental"> Rent a car </li>
+                <li><a href="/inventory">New Arrivals </li>
+               <li><a href="/inventory"> lastest discount </li>
+            </ul>
+            </div>
+            <div class="column">
+                <h2> <a href="/parts" > Parts </a></h2>
+               <ul>
+                    <li><a href="/parts"> Tools </li>
+                    <li><a href="/parts">Maintainnence guide </li>
+                   <li><a href="/parts"> Check your car</li>
+                </ul>
+                </div>
+           
+    </footer>
+</body>
+</html>
